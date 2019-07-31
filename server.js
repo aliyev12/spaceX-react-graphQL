@@ -3,6 +3,7 @@ const graphqlHTTP = require("express-graphql");
 const port = process.env.PORT || 5000;
 const schema = require("./schema.js");
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+require('https').globalAgent.options.ca = require('ssl-root-cas/latest').create();
 const cors = require('cors');
 const path = require('path');
 
